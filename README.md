@@ -16,4 +16,5 @@ To test the model on the test dataset:
 `python main.py test`
 
 To use the model on an input image (must be 28*28 in grayscale):
+
 `python main.py use <input_file.jpeg>`
