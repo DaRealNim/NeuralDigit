@@ -125,13 +125,14 @@ elif sys.argv[1] == "use":
     model.load_state_dict(torch.load("model.pth"))
     # model.eval()
     while True:
+        print("Press enter to use model on "+sys.argv[2], end="")
         input()
         with Image.open(sys.argv[2]) as img:
             img = trfs.Grayscale()(img)
             inputtensor = trfs.ToTensor()(img).unsqueeze(0).to("cuda")
             # print(inputtensor.shape)
             res = model.evaluate(inputtensor)
-            print(res, end="")
+            print("Model output :",res)
 
 
 
